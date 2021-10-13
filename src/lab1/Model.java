@@ -10,4 +10,9 @@ public class Model {
     private boolean canTravel;
     private boolean smokes;
 
+    /**
+     * default constructor: does nothing
+     */
+    public Model() {}
+
 }
