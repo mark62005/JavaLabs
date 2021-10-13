@@ -15,4 +15,16 @@ public class Model {
      */
     public Model() {}
 
+    /**
+     * designated constructor
+     */
+    public Model(String firstName, String lastName, int height, int weight, boolean canTravel, boolean smokes) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.height = height;
+        this.weight = weight;
+        this.canTravel = canTravel;
+        this.smokes = smokes;
+    }
+
 }
