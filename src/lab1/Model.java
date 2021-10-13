@@ -69,4 +69,16 @@ public class Model {
         }
     }
 
+    /**
+     * Check if weight is between 80 and 280 pounds,
+     * if it fails to meet the criteria, throws an IllegalArgumentException
+     *
+     * @param weight weight in pounds
+     */
+    public static void checkWeight(int weight) {
+        if (weight < 80 || weight > 280) {
+            throw new IllegalArgumentException("Invalid input. Weight must be 80 to 280 pounds.");
+        }
+    }
+
 }
