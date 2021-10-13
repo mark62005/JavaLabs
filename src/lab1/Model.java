@@ -46,7 +46,7 @@ public class Model {
     }
 
     /**
-     * Make sure First name and Last name is between 3 and 20 characters,
+     * Check if First name and Last name is between 3 and 20 characters,
      * if it fails to meet the criteria, throws an IllegalArgumentException
      *
      * @param name first name or last name
@@ -54,6 +54,18 @@ public class Model {
     public static void checkName(String name) {
         if (name.length() < 3 || name.length() > 20) {
             throw new IllegalArgumentException("Invalid input. First name and Last name must be 3 to 20 characters.");
+        }
+    }
+
+    /**
+     * Check if height is between 24 and 84 inches,
+     * if it fails to meet the criteria, throws an IllegalArgumentException
+     *
+     * @param height height in inches
+     */
+    public static void checkHeight(int height) {
+        if (height < 24 || height > 84) {
+            throw new IllegalArgumentException("Invalid input. Height must be 24 to 84 inches.");
         }
     }
 
