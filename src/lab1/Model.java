@@ -81,4 +81,132 @@ public class Model {
         }
     }
 
+    /**
+     * Return the value of first name
+     *
+     * @return the value of first name
+     */
+    public String getFirstName() {
+        return firstName;
+    }
+
+    /**
+     * Set the value of first name
+     *
+     * @param firstName must be from 3 to 20 characters long
+     */
+    public void setFirstName(String firstName) {
+        checkName(firstName);
+        this.firstName = firstName;
+    }
+
+    /**
+     * Return the value of last name
+     *
+     * @return the value of last name
+     */
+    public String getLastName() {
+        return lastName;
+    }
+
+    /**
+     * Set the value of last name
+     *
+     * @param lastName must be from 3 to 20 characters long
+     */
+    public void setLastName(String lastName) {
+        checkName(lastName);
+        this.lastName = lastName;
+    }
+
+    /**
+     * Return the value of height in inches
+     *
+     * @return the value of height in inches
+     */
+    public int getHeight() {
+        return height;
+    }
+
+    /**
+     * Set the value of height
+     *
+     * @param height must be from 24 to 84 inches
+     */
+    public void setHeight(int height) {
+        checkHeight(height);
+        this.height = height;
+    }
+
+    /**
+     * Return the value of weight in pounds
+     *
+     * @return the value of weight in pounds
+     */
+    public int getWeight() {
+        return weight;
+    }
+
+    /**
+     * Set the value of weight in pounds
+     *
+     * @param weight must be from 80 to 280 pounds
+     */
+    public void setWeight(int weight) {
+        checkWeight(weight);
+        this.weight = weight;
+    }
+
+    /**
+     * Return the value of canTravel
+     *
+     * @return return the value of canTravel
+     */
+    public boolean isCanTravel() {
+        return canTravel;
+    }
+
+    /**
+     * Set the value of canTravel
+     *
+     * @param canTravel true or false
+     */
+    public void setCanTravel(boolean canTravel) {
+        this.canTravel = canTravel;
+    }
+
+    /**
+     * Set the value of canTravel to false by default
+     *
+     */
+    public void setCanTravel() {
+        this.canTravel = false;
+    }
+
+    /**
+     * Return the value of smokes
+     *
+     * @return return the value of smokes
+     */
+    public boolean isSmokes() {
+        return smokes;
+    }
+
+    /**
+     * Set the value of smokes
+     *
+     * @param smokes true or false
+     */
+    public void setSmokes(boolean smokes) {
+        this.smokes = smokes;
+    }
+
+    /**
+     * Set the value of smokes to false by default
+     *
+     */
+    public void setSmokes() {
+        this.smokes = false;
+    }
+
 }
