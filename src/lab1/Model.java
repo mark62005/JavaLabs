@@ -2,6 +2,10 @@ package lab1;
 
 public class Model {
 
+    // constant variables
+    public static final int INCHES_PER_FOOT = 12;
+    public static final double POUNDS_PER_KG = 2.2046;
+
     // data fields
     private String firstName;
     private String lastName;
@@ -176,11 +180,12 @@ public class Model {
     }
 
     /**
-     * Set the value of canTravel to false by default
+     * Return the value of smokes
      *
+     * @return return the value of smokes
      */
-    public void setCanTravel() {
-        this.canTravel = false;
+    public boolean isSmokes() {
+        return smokes;
     }
 
     /**
@@ -190,6 +195,23 @@ public class Model {
      */
     public void setSmokes(boolean smokes) {
         this.smokes = smokes;
+    }
+
+    /**
+     * Convert the height into feet and inches, and return it as a string.
+     * e.g. "5 feet", or "5 feet 1 inch", or "5 feet 6 inches"
+     *
+     * @return a string which the height is converted into feet and inches
+     */
+    public String getHeightInFeetAndInches() {
+
+        int feet = height / INCHES_PER_FOOT;
+        int inches = height % INCHES_PER_FOOT;
+
+        return (height % INCHES_PER_FOOT == 0) ? String.format("%d feet", feet) :
+                (height % INCHES_PER_FOOT == 1) ? String.format("%d feet %d inch", feet, inches) :
+                        String.format("%d feet %d inches", feet, inches);
+
     }
 
 }
