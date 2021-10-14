@@ -258,14 +258,14 @@ public class Model {
                 Height: %d inches
                 Weight: %.2f pounds
                 """,
-                firstName, lastName, height, weight
+                getFirstName(), getLastName(), getHeight(), getWeight()
         );
-        if (canTravel) {
+        if (isCanTravel()) {
             System.out.println("Does travel ");
         } else {
             System.out.println("Does not travel ");
         }
-        if (smokes) {
+        if (isSmokes()) {
             System.out.println("Does smoke ");
         } else {
             System.out.println("Does not smoke ");
