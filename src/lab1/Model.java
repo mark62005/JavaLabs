@@ -302,4 +302,25 @@ public class Model {
 
     }
 
+    public void displayModelDetails() {
+
+        System.out.printf("""
+                Name: %s %s
+                Height: %s
+                Weight: %.1f pounds
+                Travels: %s
+                Smokes: %s
+                Hourly rate: $%d
+                    
+                """,
+                getFirstName(), getLastName(),
+                getHeightInFeetAndInches(),
+                getWeight(),
+                isCanTravel() ? "yep" : "nope",
+                isSmokes() ? "yep" : "nope",
+                calculatePayDollarsPerHour()
+        );
+
+    }
+
 }
