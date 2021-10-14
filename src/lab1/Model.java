@@ -7,8 +7,8 @@ public class Model {
     private String lastName;
     private int height; // inches
     private int weight; // pounds
-    private boolean canTravel;
-    private boolean smokes;
+    private boolean canTravel = false;
+    private boolean smokes = false;
 
     /**
      * default constructor: does nothing
@@ -19,12 +19,12 @@ public class Model {
      * designated constructor
      */
     public Model(String firstName, String lastName, int height, int weight, boolean canTravel, boolean smokes) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.height = height;
-        this.weight = weight;
-        this.canTravel = canTravel;
-        this.smokes = smokes;
+        setFirstName(firstName);
+        setLastName(lastName);
+        setHeight(height);
+        setWeight(weight);
+        setCanTravel(canTravel);
+        setSmokes(smokes);
     }
 
     /**
@@ -37,12 +37,12 @@ public class Model {
      * @param weight weight in pounds
      */
     public Model(String firstName, String lastName, int height, int weight) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.height = height;
-        this.weight = weight;
-        this.canTravel = false;
-        this.smokes = false;
+        setFirstName(firstName);
+        setLastName(lastName);
+        setHeight(height);
+        setWeight(weight);
+        setCanTravel(false);
+        setSmokes(false);
     }
 
     /**
@@ -184,29 +184,12 @@ public class Model {
     }
 
     /**
-     * Return the value of smokes
-     *
-     * @return return the value of smokes
-     */
-    public boolean isSmokes() {
-        return smokes;
-    }
-
-    /**
      * Set the value of smokes
      *
      * @param smokes true or false
      */
     public void setSmokes(boolean smokes) {
         this.smokes = smokes;
-    }
-
-    /**
-     * Set the value of smokes to false by default
-     *
-     */
-    public void setSmokes() {
-        this.smokes = false;
     }
 
 }
