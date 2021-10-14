@@ -259,23 +259,19 @@ public class Model {
     public void printDetails() {
 
         System.out.printf("""
-                
                 Name: %s %s
                 Height: %d inches
                 Weight: %.2f pounds
+                %s
+                %s
+                
                 """,
-                getFirstName(), getLastName(), getHeight(), getWeight()
+                getFirstName(), getLastName(),
+                getHeight(),
+                getWeight(),
+                (isCanTravel()) ? "Dose travel" : "Does not travel",
+                (isSmokes()) ? "Dose smoke" : "Does not smoke"
         );
-        if (isCanTravel()) {
-            System.out.println("Does travel ");
-        } else {
-            System.out.println("Does not travel ");
-        }
-        if (isSmokes()) {
-            System.out.println("Does smoke ");
-        } else {
-            System.out.println("Does not smoke ");
-        }
 
     }
 
