@@ -246,4 +246,31 @@ public class Model {
         return Math.round(weight / POUNDS_PER_KG);
     }
 
+    /**
+     * Print the detail of Model in the following format.
+     *
+     */
+    public void printDetails() {
+
+        System.out.printf("""
+                
+                Name: %s %s
+                Height: %d inches
+                Weight: %.2f pounds
+                """,
+                firstName, lastName, height, weight
+        );
+        if (canTravel) {
+            System.out.println("Does travel ");
+        } else {
+            System.out.println("Does not travel ");
+        }
+        if (smokes) {
+            System.out.println("Does smoke ");
+        } else {
+            System.out.println("Does not smoke ");
+        }
+
+    }
+
 }
