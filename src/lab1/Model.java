@@ -5,6 +5,12 @@ public class Model {
     // constant variables
     public static final int INCHES_PER_FOOT = 12;
     public static final double POUNDS_PER_KG = 2.2046;
+    public static final int BASE_RATE_DOLLARS_PER_HOUR = 60;
+    public static final int TALL_INCHES = 67;
+    public static final double THIN_POUNDS = 140.0;
+    public static final int TALL_THIN_BONUS_DOLLARS_PER_HOUR = 5;
+    public static final int TRAVEL_BONUS_DOLLARS_PER_HOUR = 4;
+    public static final int SMOKER_DEDUCTION_DOLLARS_PER_HOUR = 10;
 
     // data fields
     private String firstName;
@@ -270,6 +276,29 @@ public class Model {
         } else {
             System.out.println("Does not smoke ");
         }
+
+    }
+
+    /**
+     * Calculates a model's per-hour pay rate and returns the amount. Everyone receives the
+     * hourly BASE_RATE_DOLLARS_PER_HOUR. Tall, thin models (both tall and thin) receive an hourly bonus of
+     * TALL_THIN_BONUS_DOLLARS_PER_HOUR. Tall means TALL_INCHES inches or more, thin means less than THIN_POUNDS pounds.
+     * Models who are willing to travel receive an extra TRAVEL_BONUS_DOLLARS_PER_HOUR per
+     * hour. However, models who smoke have SMOKER_DEDUCTION_DOLLARS_PER_HOUR per hour deducted from their pay.
+     *
+     * @return per-hour pay rate
+     */
+    public int calculatePayDollarsPerHour() {
+
+        int payDollarsPerHour = BASE_RATE_DOLLARS_PER_HOUR;
+
+        if (height >= TALL_INCHES && weight < THIN_POUNDS) {
+            payDollarsPerHour += TALL_THIN_BONUS_DOLLARS_PER_HOUR;
+        }
+        if (canTravel) { payDollarsPerHour += TRAVEL_BONUS_DOLLARS_PER_HOUR; }
+        if (smokes) { payDollarsPerHour -= SMOKER_DEDUCTION_DOLLARS_PER_HOUR; }
+
+        return payDollarsPerHour;
 
     }
 
