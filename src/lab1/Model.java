@@ -10,7 +10,7 @@ public class Model {
     private String firstName;
     private String lastName;
     private int height; // inches
-    private int weight; // pounds
+    private double weight; // pounds
     private boolean canTravel = false;
     private boolean smokes = false;
 
@@ -22,7 +22,7 @@ public class Model {
     /**
      * designated constructor
      */
-    public Model(String firstName, String lastName, int height, int weight, boolean canTravel, boolean smokes) {
+    public Model(String firstName, String lastName, int height, double weight, boolean canTravel, boolean smokes) {
         setFirstName(firstName);
         setLastName(lastName);
         setHeight(height);
@@ -40,7 +40,7 @@ public class Model {
      * @param height height in inches
      * @param weight weight in pounds
      */
-    public Model(String firstName, String lastName, int height, int weight) {
+    public Model(String firstName, String lastName, int height, double weight) {
         setFirstName(firstName);
         setLastName(lastName);
         setHeight(height);
@@ -79,7 +79,7 @@ public class Model {
      *
      * @param weight weight in pounds
      */
-    public static void checkWeight(int weight) {
+    public static void checkWeight(double weight) {
         if (weight < 80 || weight > 280) {
             throw new IllegalArgumentException("Invalid input. Weight must be 80 to 280 pounds.");
         }
@@ -133,13 +133,25 @@ public class Model {
     }
 
     /**
-     * Set the value of height
+     * Set the value of height in inches
      *
-     * @param height must be from 24 to 84 inches
+     * @param inches must be from 24 to 84 inches
      */
-    public void setHeight(int height) {
-        checkHeight(height);
-        this.height = height;
+    public void setHeight(int inches) {
+        checkHeight(inches);
+        this.height = inches;
+    }
+
+    /**
+     * Set the value of height in inches
+     *
+     * @param feet 1 feet equals to 12 inches
+     * @param inches inches
+     */
+    public void setHeight(int feet, int inches) {
+        inches += feet * INCHES_PER_FOOT;
+        checkHeight(inches);
+        this.height = inches;
     }
 
     /**
@@ -147,18 +159,29 @@ public class Model {
      *
      * @return the value of weight in pounds
      */
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
     /**
      * Set the value of weight in pounds
      *
-     * @param weight must be from 80 to 280 pounds
+     * @param pound must be from 80 to 280 pounds
      */
-    public void setWeight(int weight) {
-        checkWeight(weight);
-        this.weight = weight;
+    public void setWeight(double pound) {
+        checkWeight(pound);
+        this.weight = pound;
+    }
+
+    /**
+     * Set the value of weight in pounds
+     *
+     * @param kilograms weight in kg
+     */
+    public void setWeight(long kilograms) {
+        double weightInPounds = kilograms * POUNDS_PER_KG;
+        checkWeight(weightInPounds);
+        this.weight = weightInPounds;
     }
 
     /**
