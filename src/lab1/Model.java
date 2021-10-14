@@ -214,4 +214,13 @@ public class Model {
 
     }
 
+    /**
+     * Convert the unit of weight to kg, and return it as a long.
+     *
+     * @return a long of weight in kg
+     */
+    public long getWeightKg() {
+        return Math.round(weight / POUNDS_PER_KG);
+    }
+
 }
