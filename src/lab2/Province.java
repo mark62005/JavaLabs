@@ -19,6 +19,13 @@ public class Province {
     private String capital;     // e.g. “Victoria”
     private long population;    // e.g. 2264823
 
+    // default constructor
+    public Province() {
+        this.name = "British Columbia";
+        this.capital = "Victoria";
+        this.population = 4_648_055;
+    }
+
     public Province(String name, String capital, long population) {
         this.name = name;
         this.capital = capital;
