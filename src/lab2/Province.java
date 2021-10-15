@@ -1,8 +1,10 @@
 package lab2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.function.Predicate;
 
 public class Province {
 
@@ -30,7 +32,14 @@ public class Province {
      * @return true if it is one of the Canadian provinces
      */
     private boolean isValidProvince(String province) {
-        return (Arrays.asList(PROVINCES).contains(province.toLowerCase(Locale.ROOT)));
+
+        for (String p : PROVINCES) {
+            if (province.toLowerCase(Locale.ROOT).equals(p)) {
+                return true;
+            }
+        }
+        return false;
+
     }
 
     /**
