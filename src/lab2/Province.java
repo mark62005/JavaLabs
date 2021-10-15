@@ -59,4 +59,14 @@ public class Province {
 
     }
 
+    /**
+     * Return true if the population is between 30,000 and 15,000,000, else return false
+     *
+     * @param population population of that capital city
+     * @return if the population is between 30,000 and 15,000,000
+     */
+    private boolean isValidPopulation(int population) {
+        return population > 30_000 && population < 15_000_000;
+    }
+
 }
