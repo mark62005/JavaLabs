@@ -9,6 +9,9 @@ public class Province {
     private final String[] PROVINCES = {"ontario", "quebec", "british columbia", "alberta", "manitoba",
             "saskatchewan", "nova scotia", "new brunswick", "newfoundland and labrador",
             "prince edward island", "northwest territories", "nunavut", "yukon"};
+    private final String[] CAPITALS = {"toronto", "quebec", "victoria", "edmonton", "winnipeg",
+            "regina", "halifax", "fredericton", "st. john's",
+            "charlottetown", "yellowknife", "iqaluit", "whitehorse"};
 
     private String name;        // e.g. “British Columbia”
     private String capital;     // e.g. “Victoria”
@@ -28,6 +31,23 @@ public class Province {
      */
     private boolean isValidProvince(String province) {
         return (Arrays.asList(PROVINCES).contains(province.toLowerCase(Locale.ROOT)));
+    }
+
+    /**
+     * Check if the capital input is one of the capital city of Canadian provinces
+     *
+     * @param capital name of capital city
+     * @return true if it is one of the capital city of Canadian provinces
+     */
+    private boolean isValidCapitalCity(String capital) {
+
+        for (String c : CAPITALS) {
+            if (capital.toLowerCase(Locale.ROOT).equals(c)) {
+                return true;
+            }
+        }
+        return false;
+
     }
 
 }
