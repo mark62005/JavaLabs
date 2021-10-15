@@ -14,6 +14,9 @@ public class Province {
     private final String[] CAPITALS = {"toronto", "quebec", "victoria", "edmonton", "winnipeg",
             "regina", "halifax", "fredericton", "st. john's",
             "charlottetown", "yellowknife", "iqaluit", "whitehorse"};
+    private final String DEFAULT_PROVINCE = "British Columbia";
+    private final String DEFAULT_CAPITAL = "Victoria";
+    private final long DEFAULT_POPULATION = 4_648_055;
 
     private String name;        // e.g. “British Columbia”
     private String capital;     // e.g. “Victoria”
@@ -21,15 +24,13 @@ public class Province {
 
     // default constructor
     public Province() {
-        this.name = "British Columbia";
-        this.capital = "Victoria";
-        this.population = 4_648_055;
+        this(null,null,0);
     }
 
     public Province(String name, String capital, long population) {
-        this.name = name;
-        this.capital = capital;
-        this.population = population;
+        setName(name);
+        setCapital(capital);
+        setPopulation(population);
     }
 
     /**
@@ -72,7 +73,7 @@ public class Province {
      * @param population population of that capital city
      * @return if the population is between 30,000 and 15,000,000
      */
-    private boolean isValidPopulation(int population) {
+    private boolean isValidPopulation(long population) {
         return population > 30_000 && population < 15_000_000;
     }
 
@@ -81,7 +82,11 @@ public class Province {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (isValidProvince(name)) {
+            this.name = name;
+        } else {
+            this.name = DEFAULT_PROVINCE;
+        }
     }
 
     public String getCapital() {
@@ -89,7 +94,11 @@ public class Province {
     }
 
     public void setCapital(String capital) {
-        this.capital = capital;
+        if (isValidCapitalCity(capital)) {
+            this.capital = capital;
+        } else {
+            this.capital = DEFAULT_CAPITAL;
+        }
     }
 
     public long getPopulation() {
@@ -97,6 +106,11 @@ public class Province {
     }
 
     public void setPopulation(long population) {
-        this.population = population;
+        if (isValidPopulation(population)) {
+            this.population = population;
+        } else {
+            this.population = DEFAULT_POPULATION;
+        }
     }
+
 }
