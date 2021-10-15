@@ -78,7 +78,7 @@ public class Province {
         return name;
     }
 
-    public void setName(String name) {
+    public final void setName(String name) {
         if (isValidProvince(name)) {
             this.name = name;
         } else {
@@ -90,7 +90,7 @@ public class Province {
         return capital;
     }
 
-    public void setCapital(String capital) {
+    public final void setCapital(String capital) {
         if (isValidCapitalCity(capital)) {
             this.capital = capital;
         } else {
@@ -102,7 +102,7 @@ public class Province {
         return population;
     }
 
-    public void setPopulation(long population) {
+    public final void setPopulation(long population) {
         if (isValidPopulation(population)) {
             this.population = population;
         } else {
