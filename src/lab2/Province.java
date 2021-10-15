@@ -1,13 +1,10 @@
 package lab2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Locale;
-import java.util.Objects;
-import java.util.function.Predicate;
 
 public class Province {
 
+    // constant variables
     private final String[] PROVINCES = {"ontario", "quebec", "british columbia", "alberta", "manitoba",
             "saskatchewan", "nova scotia", "new brunswick", "newfoundland and labrador",
             "prince edward island", "northwest territories", "nunavut", "yukon"};
@@ -111,6 +108,10 @@ public class Province {
         } else {
             this.population = DEFAULT_POPULATION;
         }
+    }
+
+    public String getDetails() {
+        return String.format("The capital of %s (population. %d) is %s.", name, population, capital);
     }
 
 }
