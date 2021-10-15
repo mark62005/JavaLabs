@@ -26,7 +26,7 @@ public class Canada {
 
     public void displayAllProvinces() {
         for (Province province : provinces) {
-            province.getDetails();
+            System.out.println(province.getDetails());
         }
     }
 
