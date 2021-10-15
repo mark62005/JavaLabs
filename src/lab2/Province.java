@@ -111,7 +111,7 @@ public class Province {
     }
 
     public String getDetails() {
-        return String.format("The capital of %s (population. %d) is %s.", name, population, capital);
+        return String.format("The capital of %s (population. %d) is %s.", getName(), getPopulation(), getCapital());
     }
 
 }
