@@ -1,5 +1,7 @@
 package lab2;
 
+import java.util.Arrays;
+
 public class Canada {
 
     private Province[] provinces;
@@ -26,6 +28,24 @@ public class Canada {
         for (Province province : provinces) {
             province.getDetails();
         }
+    }
+
+    public int getNumOfProvincesBetween(int min, int max) {
+
+//        // stream API
+//        return (int) Arrays.stream(provinces)
+//                .filter(p -> p.getPopulation() / 1_000_000 >= min && p.getPopulation() / 1_000_000 <= max)
+//                .count();
+
+        // for-each loop
+        int count = 0;
+        for (Province province : provinces) {
+            if (province.getPopulation() / 1_000_000 >= min && province.getPopulation() / 1_000_000 <= max) {
+                count++;
+            }
+        }
+        return count;
+
     }
 
 }
