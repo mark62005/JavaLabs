@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48def5f9-5097-43d6-93e5-fbf8a9cc8bd0" name="Changes" comment="">
+    <list default="true" id="7615b8ec-8c09-4d3f-a3e6-7f5b899ccbdb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/week2/arraylists/BasicArrayLists2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/week2/arraylists/FindingValueInArrayList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/week2/arraylists/GettingTheLargestValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/week2/arraylists/LocatingTheLargestValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/week2/arraylists/WhereIsIt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/week2/arrays/BasicArrays2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/week2/arrays/CopyingArrays.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/week2/arrays/FindingTheLargestValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/week2/arrays/LocatingTheLargestValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/week2/arrays/WhereIsIt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab2/Canada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab2/Canada.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,15 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="ProjectId" id="1zWOf6euAuovlbl5Sp2PRx0anJL" />
+  <component name="ProjectId" id="1zkDWR11nVY0sexOn3ZNH1vZa0N" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -36,13 +37,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Application.CanadaDriver">
-    <configuration name="CanadaDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab2.CanadaDriver" />
+  <component name="RunManager" selected="Application.LocatingTheLargestValue (1)">
+    <configuration name="BasicArrayLists2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="week2.arraylists.BasicArrayLists2" />
       <module name="labs" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lab2.*" />
+          <option name="PATTERN" value="week2.arraylists.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -50,12 +51,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ModelDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab1.ModelDriver" />
+    <configuration name="FindingValueInArrayList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="week2.arraylists.FindingValueInArrayList" />
       <module name="labs" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lab1.*" />
+          <option name="PATTERN" value="week2.arraylists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GettingTheLargestValue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="week2.arraylists.GettingTheLargestValue" />
+      <module name="labs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="week2.arraylists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LocatingTheLargestValue (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="week2.arraylists.LocatingTheLargestValue" />
+      <module name="labs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="week2.arraylists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WhereIsIt (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="week2.arraylists.WhereIsIt" />
+      <module name="labs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="week2.arraylists.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -65,19 +105,22 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CanadaDriver" />
-        <item itemvalue="Application.ModelDriver" />
+        <item itemvalue="Application.LocatingTheLargestValue (1)" />
+        <item itemvalue="Application.GettingTheLargestValue" />
+        <item itemvalue="Application.WhereIsIt (1)" />
+        <item itemvalue="Application.FindingValueInArrayList" />
+        <item itemvalue="Application.BasicArrayLists2" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="48def5f9-5097-43d6-93e5-fbf8a9cc8bd0" name="Changes" comment="" />
-      <created>1634260477943</created>
+      <changelist id="7615b8ec-8c09-4d3f-a3e6-7f5b899ccbdb" name="Changes" comment="" />
+      <created>1634683223153</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1634260477943</updated>
+      <updated>1634683223153</updated>
     </task>
     <servers />
   </component>
