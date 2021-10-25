@@ -40,7 +40,7 @@ public abstract class Piece {
         if (o == null || getClass() != o.getClass()) return false;
 
         Piece piece = (Piece) o;
-        return value == piece.value && isWhite == piece.isWhite;
+        return value == piece.getValue() && isWhite == piece.isWhite();
     }
 
     @Override
