@@ -1,5 +1,7 @@
 public class Knight extends Piece {
 
+    public Knight(){}
+
     public Knight(boolean isWhite) {
         super(2, isWhite);
     }

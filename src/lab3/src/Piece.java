@@ -6,6 +6,8 @@ public abstract class Piece {
     private int value;
     private boolean isWhite;
 
+    public Piece() {}
+
     public Piece(int value, boolean isWhite) {
         this.value = value;
         this.isWhite = isWhite;
