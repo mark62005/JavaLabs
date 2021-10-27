@@ -11,7 +11,10 @@ public class Bishop extends Piece {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Bishop{" +
+                "value='" + getValue() + '\'' +
+                ", isWhite='" + isWhite() + '\'' +
+                '}';
     }
 
 }

@@ -11,7 +11,10 @@ public class King extends Piece {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "King{" +
+                "value='" + getValue() + '\'' +
+                ", isWhite='" + isWhite() + '\'' +
+                '}';
     }
 
 }

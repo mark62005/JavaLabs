@@ -32,7 +32,7 @@ public abstract class Piece {
     // abstract method
     // child class: must override the abstract method || has to be an abstract class
     // cannot be static || final
-    public void move() {}
+    public abstract void move();
 
     @Override
     public boolean equals(Object o) {
@@ -43,14 +43,6 @@ public abstract class Piece {
 
         Piece piece = (Piece) o;
         return value == piece.getValue() && isWhite == piece.isWhite();
-    }
-
-    @Override
-    public String toString() {
-        return "Piece{" +
-                "value='" + value + '\'' +
-                ", isWhite='" + isWhite + '\'' +
-                '}';
     }
 
 }

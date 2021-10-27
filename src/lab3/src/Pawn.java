@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Pawn extends Piece {
 
     private boolean promoted;
@@ -16,8 +18,12 @@ public class Pawn extends Piece {
     }
 
     public void promote(Piece newPiece) {
-        setNewPiece(newPiece);
-        setPromoted(true);
+        if (!this.promoted) {
+            setNewPiece(newPiece);
+            setPromoted(true);
+        } else {
+            System.out.println("It's already been promoted.");
+        }
     }
 
     public Piece getNewPiece() {
@@ -52,16 +58,24 @@ public class Pawn extends Piece {
         if (!super.equals(o)) return false;
 
         Pawn pawn = (Pawn) o;
-        // check if both of them have been promoted
-        if (this.promoted != pawn.isPromoted()) return false;
-        // if both of them have been promoted, check if they are being promoted to the same Piece types
-        if (this.promoted && pawn.promoted) {
-//            if (this.newPiece == null || pawn.getNewPiece() == null) return false;
-            return this.newPiece.equals(pawn.getNewPiece());
-        }
+//        // check if both of them have been promoted
+//        if (this.promoted != pawn.isPromoted()) return false;
+//        // if both of them have been promoted, check if they are being promoted to the same Piece types
+//        if (this.promoted && pawn.promoted) {
+////            if (this.newPiece == null || pawn.getNewPiece() == null) return false;
+//            return this.newPiece.equals(pawn.getNewPiece());
+//        }
+//
+//        return true;
 
-        return true;
+        return (isWhite() == pawn.isWhite() && promoted == pawn.promoted
+                && (newPiece.getValue() == pawn.newPiece.getValue()));
 
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(promoted, newPiece);
     }
 
     @Override
@@ -71,7 +85,10 @@ public class Pawn extends Piece {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Pawn{" +
+                "value='" + getValue() + '\'' +
+                ", isWhite='" + isWhite() + '\'' +
+                '}';
     }
 
 }
