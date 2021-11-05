@@ -6,12 +6,12 @@ import java.util.Objects;
 /**
  * Singly Linked-list (generic)
  */
-public class MyLinkedList<E> {
+public class MyLinkedListSol<E> {
 
   private Node<E> head, tail; // null
   private int size; // 0
 
-  public MyLinkedList() { }
+  public MyLinkedListSol() { }
 
   // O(1)
   public void addFirst(E e) {
@@ -85,34 +85,30 @@ public class MyLinkedList<E> {
    */
   public E removeLast() {
     // TODO: Implement Me;
-    Node<E> h = head;
+
     // if the list is empty
-    if (h == null) {
+    if (head == null) {
       throw new NoSuchElementException("list is empty");
     }
 
     // if there's only 1 element in the list
-    if (h.next == null) {
-      E data = h.data;
-      head = null;
-      size--;
-      return data;
-    } else {
-
-      // if there are more than 1 elements in the list, find the second last element
-      Node<E> secondLast = head;
-      while (h.next != null) {
-        secondLast = h;
-        h = h.next;
-      }
-
-      E data = h.data;
-      secondLast.next = null;
-      tail = secondLast;
-      size--;
-      return data;
-
+    if (size == 1) {
+      return removeFirst();
     }
+
+    // if there are more than 1 elements in the list, find the second last element
+    Node<E> nodeBefore = head;
+    for (int i = 0; i < size - 2; i++) {
+      nodeBefore = nodeBefore.next;
+    }
+
+    Node<E> nodeToRemove = nodeBefore.next;
+
+    nodeBefore.next = null;
+    tail = nodeBefore;
+    size--;
+
+    return nodeToRemove.data;
 
   }
 
@@ -185,51 +181,7 @@ public class MyLinkedList<E> {
   public boolean remove(E e) {
     // TODO: Implement M
 
-    Node<E> curr = head;
-    Node<E> prev = null;
-    found : {
-
-      if (e == null) {
-        for (; curr != null; curr = curr.next) {
-          if (curr.data == null) {
-            break found;
-          }
-          prev = curr;
-        }
-      } else {
-        for (; curr != null; curr = curr.next) {
-          if (e.equals(curr.data)) {
-            break found;
-          }
-          prev = curr;
-        }
-      }
-      return false;
-
-    }
-
-    unlink(prev, curr);
-    return true;
-
-  }
-
-  private E unlink(Node<E> prev, Node<E> n) {
-
-    E data = n.data;
-
-    if (prev == null) {
-      removeFirst();
-
-    } else if (n.next == null) {
-      removeLast();
-
-    } else {
-      prev.next = n.next;
-      size--;
-
-    }
-    return data;
-
+    return false;
   }
 
   /**
@@ -243,12 +195,26 @@ public class MyLinkedList<E> {
 
     Objects.checkIndex(index, size);
 
+    Node<E> prev = head;
+
     if (index == 0) {
-      unlink(null, getNodeAt(index));
-    } else {
-      unlink(getNodeAt(index - 1), getNodeAt(index));
+      head = prev.next;
+      return true;
     }
+
+    if (index == size - 1) {
+      removeLast();
+      return true;
+    }
+
+    for (int i = 0; i < index - 1; i++) {
+      prev = prev.next;
+    }
+
+    prev.next = prev.next.next;
+    size --;
     return true;
+
   }
 
 
@@ -265,14 +231,14 @@ public class MyLinkedList<E> {
     // TODO: Implement Me
 
     Node<E> curr = head;
-    int targetIndex = -1;
+    int index = -1;
     int i = 0;
 
     if (e == null) {
 
       for (; i < size; i++) {
         if (curr.data == null) {
-          targetIndex = i;
+          index = i;
         }
         curr = curr.next;
       }
@@ -281,13 +247,13 @@ public class MyLinkedList<E> {
 
       for (; i < size; i++) {
         if (curr.data.equals(e)) {
-          targetIndex = i;
+          index = i;
         }
         curr = curr.next;
       }
 
     }
-    return targetIndex;
+    return index;
 
   }
 
