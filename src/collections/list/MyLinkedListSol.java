@@ -86,28 +86,23 @@ public class MyLinkedListSol<E> {
   public E removeLast() {
     // TODO: Implement Me;
 
-    // if the list is empty
+    // if linked list is empty
     if (head == null) {
-      throw new NoSuchElementException("list is empty");
+      throw new NoSuchElementException();
     }
-
-    // if there's only 1 element in the list
+    // if linked list has one node
     if (size == 1) {
       return removeFirst();
     }
-
-    // if there are more than 1 elements in the list, find the second last element
+    // more than one node
     Node<E> nodeBefore = head;
     for (int i = 0; i < size - 2; i++) {
       nodeBefore = nodeBefore.next;
     }
-
     Node<E> nodeToRemove = nodeBefore.next;
-
     nodeBefore.next = null;
     tail = nodeBefore;
     size--;
-
     return nodeToRemove.data;
 
   }
@@ -181,7 +176,20 @@ public class MyLinkedListSol<E> {
   public boolean remove(E e) {
     // TODO: Implement M
 
-    return false;
+    int index = indexOf(e);
+    if (index == -1) {
+      return false;
+    }
+    if (index == 0) {
+      removeFirst();
+      return true;
+    }
+    if (index == size - 1) {
+      removeLast();
+      return true;
+    }
+    return remove(index);
+
   }
 
   /**
@@ -194,25 +202,18 @@ public class MyLinkedListSol<E> {
     // TODO: Implement Me
 
     Objects.checkIndex(index, size);
-
-    Node<E> prev = head;
-
     if (index == 0) {
-      head = prev.next;
+      removeFirst();
       return true;
     }
-
     if (index == size - 1) {
       removeLast();
       return true;
     }
-
-    for (int i = 0; i < index - 1; i++) {
-      prev = prev.next;
-    }
-
+    Node<E> prev = getNodeAt(index - 1);
     prev.next = prev.next.next;
-    size --;
+    size--;
+
     return true;
 
   }
